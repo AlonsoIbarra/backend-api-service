@@ -1,0 +1,40 @@
+{
+  "name": "api-service",
+  "version": "1.0.0",
+  "description": "A NodeJs API service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlonsoIbarra/backend-api-service.git"
+  },
+  "author": "Saul Alonso Ibarra Luevano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlonsoIbarra/backend-api-service/issues"
+  },
+  "homepage": "https://github.com/AlonsoIbarra/backend-api-service#readme",
+  "dependencies": {
+    "awilix": "^8.0.1",
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "memory-cache": "^0.2.0",
+    "mongoose": "^7.2.0",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "jest": "^29.5.0",
+    "mockingoose": "^2.16.2",
+    "nodemon": "^2.0.22"
+  }
+}
