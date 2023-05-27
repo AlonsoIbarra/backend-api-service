@@ -10,7 +10,11 @@ class IdeaController{
         return response.send(user);
     }
     async getAll(request, response){
-        const ideas = await _ideaService.getAll();
+        const { pageSize, pageNumber } = request.query;
+        const ideas = await _ideaService.getAll(
+            pageSize,
+            pageNumber
+        );
         return response.send(ideas);
     }
     async create(request, response){
