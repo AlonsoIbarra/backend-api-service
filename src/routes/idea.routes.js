@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { AuthMiddleware } = require("../middlewares")
+const { AuthMiddleware, ParseIntMiddleware } = require("../middlewares")
 
 module.exports = function({IdeaController}){
     const router = new Router();
@@ -11,7 +11,10 @@ module.exports = function({IdeaController}){
     );
     router.get(
         "",
-        [ AuthMiddleware ],
+        [
+            AuthMiddleware,
+            ParseIntMiddleware
+        ],
         IdeaController.getAll
     );
     router.get(

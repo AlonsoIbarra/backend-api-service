@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { AuthMiddleware } = require("../middlewares");
+const { AuthMiddleware, ParseIntMiddleware } = require("../middlewares");
 module.exports = function({UserController}){
     const router = Router();
 
@@ -10,7 +10,10 @@ module.exports = function({UserController}){
     );
     router.get(
         '',
-        [ AuthMiddleware ],
+        [
+            AuthMiddleware,
+            ParseIntMiddleware
+        ],
         UserController.getAll
     );
     router.patch(
