@@ -9,6 +9,19 @@ describe("User Service", () => {
     jest.clearAllMocks();
   });
 
+  it("Should create a user", async () => {
+    // Given
+    const UserRepository = UserRepositoryMock;
+    UserRepository.create.mockReturnValue(user);
+    const _userService = new UserService({ UserRepository });
+
+    // When
+    const expected = await _userService.create({...user});
+
+    // Then
+    expect(expected).toMatchObject(user);
+  });
+
   it("Should find a user by id", async () => {
     // Given
     const UserRepository = UserRepositoryMock;
