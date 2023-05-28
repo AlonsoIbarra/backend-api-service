@@ -24,7 +24,7 @@ describe(
                 const expected = await _userRepository.get(_user._id);
 
                 // Then
-                return expect(JSON.parse(JSON.stringify(expected))).toMatchObject(_user);
+                expect(JSON.parse(JSON.stringify(expected))).toMatchObject(_user);
 
             }
         );
