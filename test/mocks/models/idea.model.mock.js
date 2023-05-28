@@ -37,7 +37,7 @@ module.exports = {
         ],
         "__v": 0
     },
-    comments: [
+    ideas: [
         {
             "_id": "64724b403ea8e12c7f999b87",
             "idea": "idea 6",
