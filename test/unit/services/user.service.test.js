@@ -68,9 +68,11 @@ describe("User Service", () => {
     const _userService = new UserService({ UserRepository });
 
     // When
-    const expected = await _userService.repository.update(
+    const expected = await _userService.update(
       user._id,
-      user
+      {
+        "username": "another"
+      }
     );
 
     // Then
@@ -84,7 +86,7 @@ describe("User Service", () => {
     const _userService = new UserService({ UserRepository });
 
     // When
-    const expected = await _userService.repository.delete(user._id);
+    const expected = await _userService.delete(user._id);
 
     // Then
     expect(expected).toEqual(true);
