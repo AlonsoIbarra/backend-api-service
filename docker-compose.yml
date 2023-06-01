@@ -1,0 +1,17 @@
+version: '3'
+services:
+  api:
+    build: .
+    depends_on:
+      - mongo-service
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo-service:27017/test
+      - APPLICATION_NAME=INCUBADOR DE IDEAS
+      - JWT_SECRET=lh+as098765?GHOIñ%Uhbnmt_ui(*RUHN654vhjH{
+      - CACHE_KEY=098}765[?GHOIñ(*RUHN654vhjH{
+      - SWAGGER_DOC=swaggerPROD
+    ports:
+      - 3000:3000
+  mongo-service:
+    image: mongo
